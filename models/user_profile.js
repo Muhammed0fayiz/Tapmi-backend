@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   age: { type: String },
   heOrShe: { type: String },
-  pronouns: { type: String }, 
+  pronouns: { type: String },
   email: { type: String, required: true },
   phone: { type: String },
   gitLink: { type: String },
@@ -14,8 +14,8 @@ const userSchema = new mongoose.Schema({
   image: { type: String },
   youtubeImage: { type: String },
   skills: [{ type: String }],
-  project: { type: mongoose.Schema.Types.ObjectId, ref: 'Project' },
-  caseStudy: { type: mongoose.Schema.Types.ObjectId, ref: 'CaseStudy' },
+  project: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }],
+  caseStudy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CaseStudy' }],
 }, { timestamps: true });
 
-module.exports = mongoose.model('Used', userSchema);
+module.exports = mongoose.model('User', userSchema); 
